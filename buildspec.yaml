@@ -4,6 +4,8 @@ env:
     LAMBDA_NAME: "test"
 phases:
   install:
+    runtime-versions:
+      python: 3.7 
     commands:
       - apt-get update
       - apt-get install zip
