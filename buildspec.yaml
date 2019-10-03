@@ -16,4 +16,11 @@ phases:
       - pip install -r requirements.txt
   build:
     commands:
-      - echo Hello from CodeBuild
+      - mkdir -p ./package/tmp/
+      - cp *.py ./package/tmp/
+      - cd ./package/tmp && zip -r ../../$(PROJECT).zip * .[^.]*
+      
+artifacts:
+  files:
+    - '**/*'
+  name: myname-$(date +%Y-%m-%d)
