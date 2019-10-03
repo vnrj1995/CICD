@@ -1,0 +1,18 @@
+version: 0.2
+env:
+  variables:
+    LAMBDA_NAME: "test"
+phases:
+  install:
+    commands:
+      - apt-get update
+      - apt-get install zip
+  pre_build:
+    commands:
+      - pip install virtualenv
+      - virtualenv env
+      - . env/bin/activate
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo Hello from CodeBuild
