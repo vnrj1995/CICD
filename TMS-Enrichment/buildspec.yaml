@@ -5,16 +5,15 @@ env:
 phases:
   install:
     runtime-versions:
-      python: 3.7 
-    commands:
-      - yum install zip
+      java: corretto8
+      
   pre_build:
     commands:
       - echo Pre Build
       
   build:
     commands:
-      -- echo Build started on `date`
+      - echo Build started on `date`
       - mvn test
    post build:
     commands:
