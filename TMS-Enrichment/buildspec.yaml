@@ -10,16 +10,16 @@ phases:
   pre_build:
     commands:
       - echo Test started on `date`
-      - mvn clean compile test
-      
+      - mvn clean compile test      
   build:
     commands:
       - echo Build started on `date`
-      - mvn package shade:shade
+      - mvn test 
    post build:
     commands:
       - echo Build completed on `date` !!!
+      - mvn package
 artifacts:
   files:
-    - '**/*'
+    - target/amway-tms-enrichment-1.0.0-lambda.jar
   name: vanaraj-$(date +%Y-%m-%d)
