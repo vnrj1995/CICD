@@ -9,16 +9,16 @@ phases:
       
   pre_build:
     commands:
-      - echo Pre Build
+      - echo Test started on `date`
+      - mvn clean compile test
       
   build:
     commands:
       - echo Build started on `date`
-      - mvn test
+      - mvn package shade:shade
    post build:
     commands:
-      - echo Build completed on `date`
-      - mvn package
+      - echo Build completed on `date` !!!
 artifacts:
   files:
     - '**/*'
