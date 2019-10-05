@@ -15,12 +15,10 @@ phases:
   build:
     commands:
       - echo Enter Build Phase
-      - echo Enter Build 'date'
       - mvn install
    post build:
     commands:
       - echo Enter post build phases
-      - echo Build completed on 'date'
       
 artifacts:
   files:
