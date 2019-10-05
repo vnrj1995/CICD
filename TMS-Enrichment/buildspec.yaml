@@ -11,15 +11,15 @@ phases:
   pre_build:
     commands:
       - echo Pre Build
-
+      
   build:
     commands:
-      - echo Enter Build Phase
-      - mvn install
+      -- echo Build started on `date`
+      - mvn test
    post build:
     commands:
-      - echo Enter post build phases
-      
+      - echo Build completed on `date`
+      - mvn package
 artifacts:
   files:
     - '**/*'
