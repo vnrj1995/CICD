@@ -1,0 +1,5 @@
+datasource:
+  driverClassName: com.ibm.as400.access.AS400JDBCDriver
+  url: jdbc:as400:AMWTHA;prompt=false;transaction isolation=none;translate binary=true;libraries=RPDEOBJTHA;naming=system?autoReconnect=true
+  username: AJBPMRPU
+  password: dfcrep12

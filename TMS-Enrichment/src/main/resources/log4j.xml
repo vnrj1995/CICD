@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+ 
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+       <layout class="org.apache.log4j.PatternLayout">
+          <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p %c{1} - %m%n"/>
+       </layout>
+    </appender>
+    
+     <root>
+        <level value="INFO" />
+        <appender-ref ref="ConsoleAppender" />
+    </root>
+
+	<logger name="com.zaxxer.hikari.HikariConfig">
+	  <level value="trace"/> 
+	</logger>
+	
+	<logger name="com.amway.kinesis.consumer.KinesisLambdaReceiver">
+	  <level value="debug"/> 
+	</logger>
+	
+</log4j:configuration>

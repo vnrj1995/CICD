@@ -1,0 +1,28 @@
+version: 0.2
+env:
+  variables:
+    LAMBDA_NAME: "test"
+phases:
+  install:
+    runtime-versions:
+      python: 3.7 
+    commands:
+      - yum install zip
+  pre_build:
+    commands:
+      - echo Pre Build
+
+  build:
+    commands:
+      - echo Enter Build Phase
+      - echo Enter Build 'date'
+      - mvn install
+   post build:
+    commands:
+      - echo Enter post build phases
+      - echo Build completed on 'date'
+      
+artifacts:
+  files:
+    - '**/*'
+  name: myname-$(date +%Y-%m-%d)
