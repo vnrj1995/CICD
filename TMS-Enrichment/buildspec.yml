@@ -6,7 +6,7 @@ phases:
   install:
     runtime-versions:
       java: corretto8
-      
+
   pre_build:
     commands:
       - echo Test started on `date`  
@@ -17,6 +17,7 @@ phases:
    post build:
     commands:
       - echo Build completed on `date` !!!
+      - mvn package
 artifacts:
   files:
     - target/amway-tms-enrichment-1.0.0-lambda.jar
